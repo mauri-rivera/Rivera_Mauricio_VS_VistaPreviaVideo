@@ -13,8 +13,6 @@ let contenidoVideo = "";
     return identificador;
 }*/
 
-app.li
-
 document.getElementsByClassName("video").onclick = function () {
     let identificador = document.getElementsByClassName("video").id;
     console.log(identificador);
