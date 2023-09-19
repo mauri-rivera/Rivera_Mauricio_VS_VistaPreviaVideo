@@ -1,4 +1,10 @@
-import fs from 'node:fs';
+import * as fs from 'node:fs';
+
+const cors = require('cors');
+const app = express();
+app.use(cors({ 
+    origin: 'http://localhost:5500'
+}));
 
 let contenidoVideo = "";
 
@@ -6,6 +12,8 @@ let contenidoVideo = "";
     let identificador = elemento.id;
     return identificador;
 }*/
+
+app.li
 
 document.getElementsByClassName("video").onclick = function () {
     let identificador = document.getElementsByClassName("video").id;
