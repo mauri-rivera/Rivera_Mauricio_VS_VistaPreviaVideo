@@ -1,21 +1,27 @@
 import fs from 'node:fs';
 
-function identificarVideo(elemento) {
+let contenidoVideo = "";
 
-    let contenidoVideo = "";
+/*function identificarVideo(elemento) {
     let identificador = elemento.id;
+    return identificador;
+}*/
 
-    document.getElementById(identificador).onclick = function () {
+document.getElementsByClassName("video").onclick = function () {
+    let identificador = document.getElementsByClassName("video").id;
+    console.log(identificador);
+    /*document.getElementById(identificador).onclick = function () {
         if (document.getElementById("pantallaVideo").hasChildNodes()) {
-            
+
             document.getElementById("videoActual").remove();
             contenidoVideo = document.createElement("VIDEO");
             contenidoVideo.setAttribute("class", "muestraVideo");
             contenidoVideo.setAttribute("id", "videoActual");
 
-            if (contenidoVideo.canPlayType("video/mp4")) { 
-                let src = `videos/${identificador}/`;
-                let ubicacion = leerCarpeta(src); 
+            if (contenidoVideo.canPlayType("video/mp4")) {
+                //let src = `videos/${identificador}/`;
+                let src = `videos/${identificador}/`
+                let ubicacion = leerCarpeta(src);
                 contenidoVideo.setAttribute("src", `videos/${identificador}/${ubicacion}`);
             } else {
                 contenidoVideo.setAttribute("src", "movie.ogg");
@@ -45,17 +51,15 @@ function identificarVideo(elemento) {
             contenidoVideo.setAttribute("controls", "controls");
             document.getElementById("pantallaVideo").appendChild(contenidoVideo);
         }
-    }
-
-    function leerCarpeta(src) {
-        const files = fs.readdirSync(src);
-        
-        let archivo = files.toString();
-        return archivo;
-    }
+    }*/
 }
 
-identificarVideo();
+function leerCarpeta(src) {
+    const files = fs.readdirSync(src);
+
+    let archivo = files.toString();
+    return archivo;
+}
 
 
 
