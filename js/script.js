@@ -40,16 +40,16 @@ function encontrarUbicacion(id) {
     let ruta = "";
     switch (id) {
         case "video1":
-            ruta = "/videos/videos1/movie.mp4";
+            ruta = "videos/videos1/movie.mp4";
             break;
         case "video2":
-            ruta = "/videos/videos2/pexels-yogendra-singh-15135149.mp4";
+            ruta = "videos/videos2/pexels-yogendra-singh-15135149.mp4";
             break;
         case "video3":
-            ruta = "/videos/videos3/pexels-ricardo-perez-18092718.mp4";
+            ruta = "videos/videos3/pexels-ricardo-perez-18092718.mp4";
             break;
         case "video4":
-            ruta = "/videos/videos4/pexels-swapnil-sharma-14916652.mp4";
+            ruta = "videos/videos4/pexels-swapnil-sharma-14916652.mp4";
             break;
     }
 
