@@ -1,6 +1,6 @@
 
 function mostrarId(elemento) {
-   if (document.getElementById("pantallaVideo").hasChildNodes()) {
+    if (document.getElementById("pantallaVideo").hasChildNodes()) {
         document.getElementById("videoActual").remove();
         muestraVideo(elemento);
     }
@@ -33,6 +33,7 @@ function muestraVideo(atributo) {
     contenidoVideo.setAttribute("height", "400");
     contenidoVideo.setAttribute("controls", "controls");
     document.getElementById("pantallaVideo").appendChild(contenidoVideo);
+    //document.getElementById("videoActual").muted = true;
 }
 
 function encontrarUbicacion(id) {
@@ -58,10 +59,11 @@ function encontrarUbicacion(id) {
 function playVideo(idVideo) {
     let videoId = idVideo.id;
     document.getElementById(videoId).play();
-    document.getElementById(videoId).muted;
+    document.getElementById(videoId).muted = true;
 }
 
 function stopVideo(idVideo) {
     let videoId = idVideo.id;
     document.getElementById(videoId).pause();
+    document.getElementById(videoId).muted = false;
 }
