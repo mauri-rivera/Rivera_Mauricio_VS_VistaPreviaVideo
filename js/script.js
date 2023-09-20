@@ -21,6 +21,8 @@ function muestraVideo(atributo) {
     if (contenidoVideo.canPlayType("video/mp4")) {
         let ubicacion = encontrarUbicacion(identificador);
         contenidoVideo.setAttribute("src", ubicacion);
+        contenidoVideo.setAttribute("onmouseover", "playVideo(this)");
+        contenidoVideo.setAttribute("onmouseout", "stopVideo(this)");
     } 
     else 
     {
@@ -37,7 +39,7 @@ function encontrarUbicacion(id) {
     let ruta = "";
     switch (id) {
         case "video1":
-            ruta = "/videos/videos1/video.mp4";
+            ruta = "/videos/videos1/movie.mp4";
             break;
         case "video2":
             ruta = "/videos/videos2/pexels-yogendra-singh-15135149.mp4";
@@ -51,4 +53,15 @@ function encontrarUbicacion(id) {
     }
 
     return ruta;
+}
+
+function playVideo(idVideo) {
+    let videoId = idVideo.id;
+    document.getElementById(videoId).play();
+    document.getElementById(videoId).muted;
+}
+
+function stopVideo(idVideo) {
+    let videoId = idVideo.id;
+    document.getElementById(videoId).pause();
 }
