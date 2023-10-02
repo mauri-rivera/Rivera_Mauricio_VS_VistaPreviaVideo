@@ -20,6 +20,7 @@ function muestraVideo(atributo) {
 
     if (contenidoVideo.canPlayType("video/mp4")) {
         let ubicacion = encontrarUbicacion(identificador);
+        console.log(ubicacion);
         contenidoVideo.setAttribute("src", ubicacion);
         contenidoVideo.setAttribute("onmouseover", "playVideo(this)");
         contenidoVideo.setAttribute("onmouseout", "stopVideo(this)");
@@ -37,7 +38,10 @@ function muestraVideo(atributo) {
 }
 
 function encontrarUbicacion(id) {
-    let ruta = "";
+    let ruta = "";/*, rutaVideo = "";
+    let videoId = document.querySelector(`#${id}`);
+    let hashtag = videoId.getAttribute("href");*/
+
     switch (id) {
         case "video1":
             //ruta = "Rivera_Mauricio_VS_VistaPreviaVideo/videos/videos1/movie.mp4";
@@ -58,6 +62,7 @@ function encontrarUbicacion(id) {
     }
 
     return ruta;
+    //return rutaVideo;
 }
 
 function playVideo(idVideo) {
